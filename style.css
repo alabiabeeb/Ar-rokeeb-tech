@@ -14,75 +14,71 @@
     }
 
     header {
-      background-color: #002d2f;
-      display: flex;
-      justify-content: space-between;
-      position: fixed;
-      z-index: 2000;
-        top: 0;
-        width: 100%;
-      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-      align-items: center;
-      padding: 25px 70px;
-    }
-    .nav-container{
-        display: flex;
-        align-items: center;
-    }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #012d32;
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-    .logo {
-      display: flex;
-      align-items: center;
-    }
+header .logo img {
+  height: 50px;
+}
 
-    .logo img {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-    }
+/* Navigation */
+.nav-container {
+  display: flex;
+  align-items: center;
+}
 
-    
-    nav ul {
-      display: flex;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      gap: 30px;
-    }
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
 
-    nav ul li a {
-      text-decoration: none;
-      color: white;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
+nav ul li a {
+  color: #fff;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: color 0.3s;
+}
 
-    nav ul li a:hover {
-      color: #00c2c7;
-    }
+nav ul li a:hover {
+  color: #00c2c7;
+}
 
-    .right {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
+/* Social icons */
+.right {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
 
-    .divider {
-      width: 1px;
-      height: 25px;
-      background: white;
-      margin: 0 10px;
-    }
+.right .divider {
+  height: 25px;
+  width: 1px;
+  background: #666;
+  margin: 0 10px;
+}
 
-    .social a {
-      color: white;
-      font-size: 18px;
-      transition: color 0.3s;
-    }
+.social a {
+  color: #fff;
+  margin-left: 10px;
+  font-size: 1rem;
+}
 
-    .social a:hover {
-      color: #00c2c7;
-    }
+/* Hamburger (hidden on desktop) */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  margin-left: 20px;
+  cursor: pointer;
+}
 
     .hero {
       display: flex;
@@ -289,6 +285,9 @@ background: #004A55;;
       font-size: 1.2rem;
       font-weight: bold;
     }
+        .percent h1{
+            display: none;
+        }
 
 .portfolio {
   padding: 60px 20px;
@@ -733,3 +732,250 @@ textarea {
   color: #fff;
 }
 
+
+@media (max-width:700px) {
+    body{
+        overflow-x: hidden;
+    }
+                header {
+      background-color: #002d2f;
+      display: flex;
+      justify-content: space-between;
+      position: fixed;
+      z-index: 2000;
+        top: 0;
+        width: 100%;
+      box-shadow: 2px 7px 10px rgba(0, 0, 0, 0.1);
+      align-items: center;
+      padding: 25px 70px;
+    }
+    .hero{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+    .hero-img div{
+        width: 250px;
+        height: 300px;
+        background: #004A55;;
+        border-radius: 20px;
+        position: absolute;
+        top: 59%;
+        left: 33%;
+    }
+    .hero-left{
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+    }
+    .expertise .card span,
+.expertise .card2 span {
+  display: block;
+  margin-top: 8px;
+  font-size: 14px;
+  color: #555;
+}
+.cards {
+    grid-template-columns: 1fr;
+    display: none;
+    gap: 20px;
+  }
+
+  .card, .card2 {
+    padding: 25px 15px;
+  }
+
+  .expertise h2 {
+    font-size: 1.4rem;
+  }
+
+  .expertise p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  .skills {
+display: flex;
+font-size: 15px;
+    gap: 30px;
+  }
+
+  .circle {
+    width: 100px;
+    height: 100px;
+  }
+   .percent h1{
+            display: block;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            font-size: 15px;
+        }
+
+  .circle::before {
+    width: 70px;
+    height: 70px;
+  }
+
+  .circle span {
+    font-size: 1rem;
+  }
+ @keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+
+nav {
+  position: absolute;
+  top: 80px;
+  right: 0;
+  background: #004A55;
+  width: 100%;
+  padding: 40px;
+  flex-direction: column;
+  gap: 15px;
+  border-radius: 8px;
+
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
+
+
+nav.active {
+  animation: slideDown 0.4s ease forwards;
+  pointer-events: auto;
+}
+
+
+nav.closing {
+  animation: slideUp 0.4s ease forwards;
+}
+
+
+  nav.active {
+    display: flex;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .right {
+    display: none; 
+  }
+  
+    .portfolio {
+    padding: 40px 15px;
+  }
+
+  .portfolio h2 {
+    font-size: 24px;
+  }
+
+  .portfolio p {
+    font-size: 14px;
+    padding: 0 10px;
+    margin-bottom: 25px;
+  }
+
+  .tabs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .tab-label {
+    width: 100%;
+    text-align: center;
+    padding: 10px 15px;
+    font-size: 14px;
+    margin: 5px 0;
+  }
+
+  .content {
+    margin-top: 20px;
+  }
+
+  .software-info,
+  .step-img,
+  .step-imgs,
+  .step-imgd,
+  .step-imgds {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .step-img img,
+  .step-imgs img,
+  .step-imgd img,
+  .step-imgds img {
+    width: 90%;
+    height: auto;
+    max-width: 350px;
+  }
+
+  .caption {
+    font-size: 13px;
+    text-align: center;
+  }
+    .blog-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .blog-header p {
+    font-size: 0.9rem;
+  }
+
+  .blog-card1,
+  .blog-card2 {
+    flex-direction: column;  /* stack instead of row */
+    gap: 25px;
+  }
+
+  .blog-card {
+    width: 90%;         /* shrink for smaller screens */
+    max-width: 350px;
+  }
+
+  .blog-card img {
+    height: 180px;      /* smaller image height */
+  }
+
+  .blog-card .blog-content {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .blog-card .blog-content h2 {
+    font-size: 0.85rem;
+  }
+
+  .blog-card .blog-content p {
+    font-size: 0.7rem;
+  }
+}

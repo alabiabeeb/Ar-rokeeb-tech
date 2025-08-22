@@ -27,4 +27,12 @@ function animateCircle(circle) {
     }, { threshold: 0.5 });
 
     observer.observe(skillsSection);
-    
+     const menuToggle = document.getElementById("menu-toggle");
+  const navMenu = document.getElementById("nav-menu");
+
+  menuToggle.addEventListener("click", () => {
+    navMenu.classList.toggle("active");
+    menuToggle.innerHTML = navMenu.classList.contains("active")
+      ? '<i class="fas fa-times"></i>'   // change to X
+      : '<i class="fas fa-bars"></i>';  // change back to bars
+  });
